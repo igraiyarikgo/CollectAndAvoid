@@ -41,9 +41,13 @@ Content/CollectAndAvoid
 From CollectAndAvoid there are folders Blueprints, Materials, Meshes, Maps, UI, Input_Action.
 
 ## Blueprints, their description and their functions
+
+(Added during Part 1)
 BP_Hero. The main character that can move, jump, has camera that follows him. During completion of task, has sprint logic implemented and add input mapping implemented.\
 BP_Gamemode. The place that controls what Controller class to use (in this case it's BP_ThirdPersonPlayerController, free asset from Unreal Engine), default pawn class (In our case it's BP_Hero). Basically it's where rules are being set
 
+(Added during Part 2)
+BP_Coin
 
 # Part 1. Level blockout and player movement
 
@@ -66,7 +70,7 @@ Additionally, as the task didn't state, I didn't do animation in case of double 
 
 # Part 2. Collectibles and score.
 
-This part answers the question why the cast check is needed.
+This part mainly answers the question why the cast check is needed.
 
 ## Why cast check is needed
 
