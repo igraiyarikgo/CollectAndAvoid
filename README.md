@@ -13,11 +13,11 @@ Unreal Engine 5.8.4
 Everything done on "Epic" Viewport scalability group.
 
 ## Controls
-W -- Movement Forward
-A -- Movement Left
-S -- Movement Backward
-D -- Movement Right
-Left Shift -- Sprint
+W -- Movement Forward\
+A -- Movement Left\
+S -- Movement Backward\
+D -- Movement Right\
+Left Shift -- Sprint\
 Space -- Jump. You can also press space 2 times to double jump
 
 ## How Git is used
@@ -42,8 +42,7 @@ From CollectAndAvoid there are folders Blueprints, Materials, Meshes, Maps, UI, 
 
 ## Blueprints, their description and their functions
 BP_Hero. The main character that can move, jump, has camera that follows him. During completion of task, has sprint logic implemented and add input mapping implemented.
-BP_Gamemode. The place that controls what Controller class to use (in this case it's BP_ThirdPersonPlayerController, free asset from Unreal Engine), default pawn class (In our case it's BP_Hero).
-Basically it's where rules are being set
+BP_Gamemode. The place that controls what Controller class to use (in this case it's BP_ThirdPersonPlayerController, free asset from Unreal Engine), default pawn class (In our case it's BP_Hero). Basically it's where rules are being set
 
 
 # Part 1. Level blockout and player movement
@@ -82,4 +81,4 @@ This part answers the question why the cast check is needed.
 ## Known bugs
 During part 1 there were no bugs.
 # What I learned and what was hard
-
+I think I learnt a bit more about git, what folders i should include in .gitignore and actually I'm sort of proud that i made my first ever push commit into github. The hardest part is to have desire to continue even when you already see deadline coming and you have not a lot accomplished. So far, thanks to lecture about Unreal, I made my first Gamemode (it's still confusing to me what is it and their components though), sprint logic and double jump. I understand that maybe I did the base minimum, I tried a lot to understand stuff through documentation, sometime I looked at videos to understand some part of the lecture. So far right now I have finished part 1, and maybe the difficulty was to make obstacles be on the ground, set rules in gamemode, enhanced input is still a bit confusing to me, but changing movement parameters and adding double jump felt fun and easy in part 1.
