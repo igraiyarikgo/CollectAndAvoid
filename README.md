@@ -33,7 +33,7 @@ T\_ = Texture
 SM\_ = Static Model  
 SK\_ = Skeleton Model  
 IA\_ = Input Action  
-IMC\_ = Input Mapping Context\
+IMC\_ = Input Mapping Context
 
 ## The structure of the folders is the following
 
@@ -41,7 +41,7 @@ Content/CollectAndAvoid
 From CollectAndAvoid there are folders Blueprints, Materials, Meshes, Maps, UI, Input_Action.
 
 ## Blueprints, their description and their functions
-BP_Hero. The main character that can move, jump, has camera that follows him. During completion of task, has sprint logic implemented and add input mapping implemented.
+BP_Hero. The main character that can move, jump, has camera that follows him. During completion of task, has sprint logic implemented and add input mapping implemented.\
 BP_Gamemode. The place that controls what Controller class to use (in this case it's BP_ThirdPersonPlayerController, free asset from Unreal Engine), default pawn class (In our case it's BP_Hero). Basically it's where rules are being set
 
 
@@ -51,8 +51,8 @@ This part is describing mainly what each change of max walk speed/jump velocity/
 
 ## Changing movement parameters
 
-Changed Max Walk Speed from 600,0 cm/s to 450,0 cm/s. Changing Max Walk Speed changes maximum speed that character can achieve.
-Changed Jump Z Velocity from 500,0 cm/s to 350,0 cm/s. Changing Jump Z Velocity changes maximum height of the jump.
+Changed Max Walk Speed from 600,0 cm/s to 450,0 cm/s. Changing Max Walk Speed changes maximum speed that character can achieve.\
+Changed Jump Z Velocity from 500,0 cm/s to 350,0 cm/s. Changing Jump Z Velocity changes maximum height of the jump.\
 Changed Air Control from 0,35 to 1,0. Changing Air Control changes ability to move freely in the air. 0,0 means that if you jump, you basically can't move in any direction other than up and down. 1,0 makes you being able to move freely in jump. Basically, from what I understood, Air Control gives us control to move in the air in any direction.
 
 ## Adjusting the camera
