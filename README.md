@@ -73,6 +73,7 @@ Additionally, as the task didn't state, I didn't do animation in case of double 
 This part mainly answers the question why the cast check is needed.
 
 ## Why cast check is needed
+From what I understood, the cast check in this case is needed in order for Sphere collision component to understand that it collided with BP_Hero. Also it's needed to access variables and functions of BP_Hero.
 
 # Part 3. Enemy: patrol
 
@@ -81,6 +82,7 @@ This part mainly answers the question why the cast check is needed.
 # Part 5. Profiling, packaging and report
 
 ## Asset list with sources and licenses
+Coin collection sound was made by me (
 
 ## Known bugs
 During part 1 there were no bugs.
