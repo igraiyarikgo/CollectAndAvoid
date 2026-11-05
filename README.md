@@ -45,10 +45,11 @@ From CollectAndAvoid there are folders Blueprints (there is Widgets folder as we
 
 (Added during Part 1)
 BP_Hero. The main character that can move, jump, has camera that follows him. During completion of task, has sprint logic implemented and add input mapping implemented. Also it's class that has pause logic for WBP_Pause widget.\
-BP_Gamemode. The place that controls what Controller class to use (in this case it's BP_ThirdPersonPlayerController, free asset from Unreal Engine), default pawn class (In our case it's BP_Hero). Basically it's where rules are being set
+BP_Gamemode. The place that controls what Controller class to use (in this case it's BP_ThirdPersonPlayerController, free asset from Unreal Engine), default pawn class (In our case it's BP_Hero). Basically it's where rules are being set\
+Has function to AddScore (that adds score and check whether score is equal to target score and if that's the case, prints string that I won and makes enumeration equal to "Won"). Has variables Score and TargetScore, Game_State_Enumeration.
 
 (Added during Part 2)
-BP_Coin. Has sphere collision component and static mesh. It has only collection logic implemented, where you check whether BP_Hero collided with sphere collision component, then it would add points and destroy the coin.
+BP_Coin. Has sphere collision component and static mesh. It has only collection logic implemented, where you check whether BP_Hero collided with sphere collision component, then it would add points (by BP_GameMode AddScore function) and destroy the coin.
 
 (Added during doing something from Part 4)
 WBP_HUD. It's what gets shown in the screen, in this case Target Score, Score (that is being updated by binding to event dispatcher of gamemode), Image of coin, Controls hint.\
