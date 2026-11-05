@@ -49,7 +49,8 @@ BP_Gamemode. The place that controls what Controller class to use (in this case 
 (Added during Part 2)
 BP_Coin. Has sphere collision component and static mesh. It has only collection logic implemented, where you check whether BP_Hero collided with sphere collision component, then it would add points and destroy the coin.
 
-
+(Added during doing something from Part 4)
+WBP_HUD. It's what gets shown in the screen, in this case Target Score, Score (that is being updated by binding to event dispatcher of gamemode), Image of coin, Controls hint.
 
 # Part 1. Level blockout and player movement
 
@@ -80,19 +81,25 @@ From what I understood, the cast check in this case is needed in order for Spher
 # Part 3. Enemy: patrol
 
 # Part 4. Interface, audio and polish
+This part mainly answers the question why I should be updating the score through functions or event and not per-frame binding. 
+
+The reason why we need to update through functions or event it's because if we just update the score text for example through Details and bind it, It will happen basically every frame, no matter if score changed or not changed. That's why we should use events for example that is being called only when coin gets picked up, and only then we update the text. Basically I understood that it's just better in terms of performance.
 
 # Part 5. Profiling, packaging and report
 
 ## Asset list with sources and licenses
-Coin collection sound was made by me (
+Coin collection sound was made by me
 
 ## Known bugs
 During part 1 there were no bugs.
+During part 2 there were no bugs.
+
 # What I learned and what was hard
 I think I learnt a bit more about git, what folders i should include in .gitignore and actually I'm sort of proud that i made my first ever push commit into github. The hardest part is to have desire to continue even when you already see deadline coming and you have not a lot accomplished. So far, thanks to lecture about Unreal, I made my first Gamemode (it's still confusing to me what is it and their components though), sprint logic and double jump. I understand that maybe I did the base minimum, I tried a lot to understand stuff through documentation, sometime I looked at videos to understand some part of the lecture. So far right now I have finished part 1, and maybe the difficulty was to make obstacles be on the ground, set rules in gamemode, enhanced input is still a bit confusing to me, but changing movement parameters and adding double jump felt fun and easy in part 1.\
 While I was completing task 2, I understood that it's hard for me to understand what enhanced input is. I tried to make the code according to the lecture about adding map input, yet it's hard for me to understand what its purpose, especially when without it, the project seem to work fine.
 
-While working with Part 2, I learned how to make spinning and collectible coin, how to make it add points and disappear when BP_Hero collides with it, also how to make game state enumeration. It was hard for me to understand event dispatcher, probably cast to something.
+While working with Part 2, I learned how to make spinning and collectible coin, how to make it add points and disappear when BP_Hero collides with it, also how to make game state enumeration. It was hard for me to understand event dispatcher, probably cast to something. Especially event dispatcher, because I spent I think way too much time understanding how to make it work and how to make it basically.
+
 
 
 
