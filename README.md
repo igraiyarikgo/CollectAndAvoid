@@ -38,7 +38,7 @@ IMC\_ = Input Mapping Context
 ## The structure of the folders is the following
 
 Content/CollectAndAvoid  
-From CollectAndAvoid there are folders Blueprints, Materials, Meshes, Maps, UI, Input_Action.
+From CollectAndAvoid there are folders Blueprints, Materials, Meshes, Maps, UI, Input_Action, Sounds, Enumeration
 
 ## Blueprints, their description and their functions
 
@@ -47,7 +47,9 @@ BP_Hero. The main character that can move, jump, has camera that follows him. Du
 BP_Gamemode. The place that controls what Controller class to use (in this case it's BP_ThirdPersonPlayerController, free asset from Unreal Engine), default pawn class (In our case it's BP_Hero). Basically it's where rules are being set
 
 (Added during Part 2)
-BP_Coin
+BP_Coin. Has sphere collision component and static mesh. It has only collection logic implemented, where you check whether BP_Hero collided with sphere collision component, then it would add points and destroy the coin.
+
+
 
 # Part 1. Level blockout and player movement
 
@@ -89,4 +91,8 @@ During part 1 there were no bugs.
 # What I learned and what was hard
 I think I learnt a bit more about git, what folders i should include in .gitignore and actually I'm sort of proud that i made my first ever push commit into github. The hardest part is to have desire to continue even when you already see deadline coming and you have not a lot accomplished. So far, thanks to lecture about Unreal, I made my first Gamemode (it's still confusing to me what is it and their components though), sprint logic and double jump. I understand that maybe I did the base minimum, I tried a lot to understand stuff through documentation, sometime I looked at videos to understand some part of the lecture. So far right now I have finished part 1, and maybe the difficulty was to make obstacles be on the ground, set rules in gamemode, enhanced input is still a bit confusing to me, but changing movement parameters and adding double jump felt fun and easy in part 1.\
 While I was completing task 2, I understood that it's hard for me to understand what enhanced input is. I tried to make the code according to the lecture about adding map input, yet it's hard for me to understand what its purpose, especially when without it, the project seem to work fine.
+
+While working with Part 2, I learned how to make spinning and collectible coin, how to make it add points and disappear when BP_Hero collides with it, also how to make game state enumeration. It was hard for me to understand event dispatcher, probably cast to something.
+
+
 
