@@ -89,6 +89,7 @@ The reason why we need to update through functions or event it's because if we j
 
 ## Asset list with sources and licenses
 Coin collection sound was made by me
+Background_loop music was made by me
 
 ## Known bugs
 During part 1 there were no bugs.
