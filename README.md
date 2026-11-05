@@ -19,6 +19,7 @@ S -- Movement Backward\
 D -- Movement Right\
 Left Shift -- Sprint\
 Space -- Jump. You can also press space 2 times to double jump
+Escape -- To pause the game.
 
 ## How Git is used
 
@@ -38,19 +39,23 @@ IMC\_ = Input Mapping Context
 ## The structure of the folders is the following
 
 Content/CollectAndAvoid  
-From CollectAndAvoid there are folders Blueprints, Materials, Meshes, Maps, UI, Input_Action, Sounds, Enumeration
+From CollectAndAvoid there are folders Blueprints (there is Widgets folder as well), Materials, Meshes, Maps, UI, Input_Action, Sounds, Enumeration, Images
 
 ## Blueprints, their description and their functions
 
 (Added during Part 1)
-BP_Hero. The main character that can move, jump, has camera that follows him. During completion of task, has sprint logic implemented and add input mapping implemented.\
+BP_Hero. The main character that can move, jump, has camera that follows him. During completion of task, has sprint logic implemented and add input mapping implemented. Also it's class that has pause logic for WBP_Pause widget.\
 BP_Gamemode. The place that controls what Controller class to use (in this case it's BP_ThirdPersonPlayerController, free asset from Unreal Engine), default pawn class (In our case it's BP_Hero). Basically it's where rules are being set
 
 (Added during Part 2)
 BP_Coin. Has sphere collision component and static mesh. It has only collection logic implemented, where you check whether BP_Hero collided with sphere collision component, then it would add points and destroy the coin.
 
 (Added during doing something from Part 4)
-WBP_HUD. It's what gets shown in the screen, in this case Target Score, Score (that is being updated by binding to event dispatcher of gamemode), Image of coin, Controls hint.
+WBP_HUD. It's what gets shown in the screen, in this case Target Score, Score (that is being updated by binding to event dispatcher of gamemode), Image of coin, Controls hint.\
+WBP_Main_Menu. Widget that shows Main Menu (Play, Settings, Quit). It doesn't work right now, but in case I want to do additional widget, I would make it work.\
+WBP_Pause. Widget that shows only text "Paused" and disables/enables if you press "Escape" button. The logic of pressing buttons is implemented there as well. \
+WBP_Win. Shows text "You won" and Restart button. The logic of Restart button is implemented in the blueprint.\ 
+WBP_Lose. Shows text "You lost" and Restart button. The logic of Restart button is implemented in the blueprint.
 
 # Part 1. Level blockout and player movement
 
@@ -88,11 +93,12 @@ The reason why we need to update through functions or event it's because if we j
 # Part 5. Profiling, packaging and report
 
 ## Asset list with sources and licenses
-Coin collection sound was made by me
-Background_loop music was made by me
+Coin_pickup_sound was made by me\
+Background_loop music was made by me\
+Coin_image was made by me.
 
 ## Known bugs
-During part 1 there were no bugs.
+During part 1 there were no bugs.\
 During part 2 there were no bugs.
 
 # What I learned and what was hard
@@ -100,6 +106,8 @@ I think I learnt a bit more about git, what folders i should include in .gitigno
 While I was completing task 2, I understood that it's hard for me to understand what enhanced input is. I tried to make the code according to the lecture about adding map input, yet it's hard for me to understand what its purpose, especially when without it, the project seem to work fine.
 
 While working with Part 2, I learned how to make spinning and collectible coin, how to make it add points and disappear when BP_Hero collides with it, also how to make game state enumeration. It was hard for me to understand event dispatcher, probably cast to something. Especially event dispatcher, because I spent I think way too much time understanding how to make it work and how to make it basically.
+
+While working with Part 4, I learned how to make widgets, especially how to update score by using event dispatcher (it was also the difficult part).
 
 
 
