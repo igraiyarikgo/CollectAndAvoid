@@ -110,6 +110,8 @@ While I was completing task 2, I understood that it's hard for me to understand 
 
 While working with Part 2, I learned how to make spinning and collectible coin, how to make it add points and disappear when BP_Hero collides with it, also how to make game state enumeration. It was hard for me to understand event dispatcher, probably cast to something. Especially event dispatcher, because I spent I think way too much time understanding how to make it work and how to make it basically.
 
+While working with Part 3, I learned how to place NavMeshBoundVolume so that enemy can understand where to go, how to make enemy and how to make blackboard and behaviour tree.
+
 While working with Part 4, I learned how to make widgets, especially how to update score by using event dispatcher (it was also the difficult part).
 
 
