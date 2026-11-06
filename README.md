@@ -100,8 +100,10 @@ Coin_image was made by me.
 
 ## Known bugs
 During part 1 there were no bugs.\
-During part 2 there were no bugs.
+During part 2 there were no bugs.\
 
+During part 3 I couldn't understand whether it's better to just duplicate BP_ThirdPersonCharacter and make the BP_Enemy this way. Even though it's required to make pawn BP_Enemy, I don't know how to manually insert stuff applicable to the Enemy as character, so I duplicated BP_ThirdPersonCharacter.\
+Also it seems like sometimes AI just stops near obstacles at random moments. I suppose it's probably because sometimes I move fast and it loses where I am, or maybe the problem with obstacles.
 # What I learned and what was hard
 I think I learnt a bit more about git, what folders i should include in .gitignore and actually I'm sort of proud that i made my first ever push commit into github. The hardest part is to have desire to continue even when you already see deadline coming and you have not a lot accomplished. So far, thanks to lecture about Unreal, I made my first Gamemode (it's still confusing to me what is it and their components though), sprint logic and double jump. I understand that maybe I did the base minimum, I tried a lot to understand stuff through documentation, sometime I looked at videos to understand some part of the lecture. So far right now I have finished part 1, and maybe the difficulty was to make obstacles be on the ground, set rules in gamemode, enhanced input is still a bit confusing to me, but changing movement parameters and adding double jump felt fun and easy in part 1.\
 While I was completing task 2, I understood that it's hard for me to understand what enhanced input is. I tried to make the code according to the lecture about adding map input, yet it's hard for me to understand what its purpose, especially when without it, the project seem to work fine.
