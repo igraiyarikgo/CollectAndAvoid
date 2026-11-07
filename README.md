@@ -27,19 +27,23 @@ For storing .uasset and .umap the Git LFS is used.
 
 ## Useful abbreviations in names of objects
 
-L\_ = Level  
-BP\_ = Blueprint  
-M\_ = Material  
-T\_ = Texture  
-SM\_ = Static Model  
-SK\_ = Skeleton Model  
-IA\_ = Input Action  
-IMC\_ = Input Mapping Context
+L_ = Level\
+BP_ = Blueprint\  
+M_ = Material\
+T_ = Texture\
+SM_ = Static Model\
+SK_ = Skeleton Model\
+IA_ = Input Action\
+IMC_ = Input Mapping Context\
+
+BB_ = Blackboard\
+BT_ = Behaviour Tree\
+BTT_ = Behaviour Tree Task\
 
 ## The structure of the folders is the following
 
 Content/CollectAndAvoid  
-From CollectAndAvoid there are folders Blueprints (there is Widgets folder as well), Materials, Meshes, Maps, UI, Input_Action, Sounds, Enumeration, Images
+From CollectAndAvoid there are folders Blueprints (there is Widgets, Enemy, Behaviour_Tree (Tasks), Blackboard folder as well), Materials, Meshes, Maps, UI, Input_Action, Sounds, Enumeration, Images
 
 ## Blueprints, their description and their functions
 
