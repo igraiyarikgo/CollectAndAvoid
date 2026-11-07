@@ -59,7 +59,8 @@ BP_Coin. Has sphere collision component and static mesh. It has only collection 
 
 (Added during Part 3)
 BP_Enemy. Checks collision (I added separately sphere collision component named LoseRadius because I had problems with checking overlapping of two characters) with BP_Hero and in that case makes game state to "Lost". Also exposed max walk speed variable to be editable. It's also the blueprint of AI, that has AI Controller class BP_EnemyAIController
-BP_EnemyAIController. Starts blackboard and runs behaviour tree, has implementation of logic when Enemy sees player. Mainly it's blueprint for setting Blackboard values so that Enemy could understand in behaviour tree when to chase player or patrol between 3 points.
+BP_EnemyAIController. Starts blackboard and runs behaviour tree, has implementation of logic when Enemy sees player. Mainly it's blueprint for setting Blackboard values so that Enemy could understand in behaviour tree when to chase player or patrol between 3 points.\
+BP_PatrolPoint. Does not have any functionality and is used for Enemy to walk to them.
 
 
 (Added during doing something from Part 4)
