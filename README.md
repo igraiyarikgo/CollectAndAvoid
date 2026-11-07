@@ -106,7 +106,13 @@ The reason why we need to update through functions or event it's because if we j
 # Part 5. Profiling, packaging and report
 When I opened console and used stat fps and stat unit for the first time, mainly frame time is 16.67 ms (sometimes it gets to 17 ms though). The game time is the highest amount 7-8ms (when just starting the game it spikes up to 10-12ms and then to 7-8).\
 The draw time is 6 ms and GPU is 5 ms. First thought is that game spikes up because it adds inputs, adds WBP_HUD, activates Enemy behaviour tree and a lot of stuff at once, then stabilizes. While trying to optimize game (that is from lecture materials consists of blueprints and so on) I think we should exclude functions and events as they're called only when needed and one time. I'm thinking that I should make AI perception work with timer and that's the only thing that I think should be fixed as it's probably checked every frame.\
-I honestly don't have any idea what else could make game spike so high or be that high during the game besides AI perception, as I haven't used events with tick or "get all actors of class' node. Also there's some strange "Input" stat that has 132 ms in my game. I suspect it's probably related to Enhanced Input, but in that case I can't really do much, as I implemented all necessary features required in the task as effectively as possibly I could.
+I honestly don't have any idea what else could make game spike so high or be that high during the game besides AI perception, as I haven't used events with tick or "get all actors of class' node.
+
+After researching stat commands (and using stat game), using a bit of Unreal Insights, checking/unchecking "Start with Tick enabled" I saw that blueprint time for me is 0.04 ms and when I pick up coin, it gets 0.02ms higher (0.06ms) and falls again. So I don't think it's the issue within AI or blueprints. The most expensive item in "Game" is World Tick (1.2-2 ms) and Tick Time (0.2-0.8 ms) and for some reason unchecking "Start with Tick enabled" only worsens situation regarding those two. I think I can't fix the game issue, as I really ensured almost everything that doesn't need tick at least doesn't use event tick, and I don't seem to have any logic on Tick. 
+
+The most expensive item in GPU thread is "Postprocessing" averaging at 0.8 ms (at low viewport scalability; at epic it's 2.35 ms). I don't see it as an issue because it seems only my viewport settings are affecting it, and I don't have a lot of light or detailed shadows or particles going on.
+
+The most expensive item in Draw thread is "RenderViewFamily" with 16 ms. I'm not sure what's causing it, as I have only one material (M_Coin) and there are not really a lot of objects to draw every frame.
 
 While checking Output and Message log I didn't find any problems. 
 
@@ -122,6 +128,8 @@ During part 2 there were no bugs.\
 
 During part 3 I couldn't understand whether it's better to just duplicate BP_ThirdPersonCharacter and make the BP_Enemy this way. Even though it's required to make pawn BP_Enemy, I don't know how to manually insert stuff applicable to the Enemy as character, so I duplicated BP_ThirdPersonCharacter.\
 Also I couldn't figure out how to expose sight radius as it's hidden very very deep in ai sight config.
+
+There is also a thing you can interpret as bug where you can jump on platform and make enemy "lose" you. I'm sure that it's feature because Enemy can't walk on platforms and sometimes if you're too high it can't just see you. It's made so that platforms could be used as sort of safe spaces if enemy is going very close to you.
 
 # What I learned and what was hard
 I think I learnt a bit more about git, what folders i should include in .gitignore and actually I'm sort of proud that i made my first ever push commit into github. The hardest part is to have desire to continue even when you already see deadline coming and you have not a lot accomplished. So far, thanks to lecture about Unreal, I made my first Gamemode (it's still confusing to me what is it and their components though), sprint logic and double jump. I understand that maybe I did the base minimum, I tried a lot to understand stuff through documentation, sometime I looked at videos to understand some part of the lecture. So far right now I have finished part 1, and maybe the difficulty was to make obstacles be on the ground, set rules in gamemode, enhanced input is still a bit confusing to me, but changing movement parameters and adding double jump felt fun and easy in part 1.\
