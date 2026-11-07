@@ -3,6 +3,10 @@
 Game where player moves around an arena, collects items for points, avoids an enemy that patrols and chases, and wins or loses.
 
 ## How to run the packaged build
+1. Click at "Releases" in "About" Column in this repository.
+2. Download CollectAndAvoid.zip.
+3. Unpackage CollectAndAvoid.zip on your computer in an empty folder.
+4. Open CollectAndAvoid.exe by clicking two times with left mouse button.
 
 ## Version
 
@@ -125,7 +129,7 @@ Enemy_started_chase was made by me.
 
 ## Known bugs
 During part 1 there were no bugs.\
-During part 2 there were no bugs.\
+During part 2 there were no bugs.
 
 During part 3 I couldn't understand whether it's better to just duplicate BP_ThirdPersonCharacter and make the BP_Enemy this way. Even though it's required to make pawn BP_Enemy, I don't know how to manually insert stuff applicable to the Enemy as character, so I duplicated BP_ThirdPersonCharacter.\
 Also I couldn't figure out how to expose sight radius as it's hidden very very deep in ai sight config.
