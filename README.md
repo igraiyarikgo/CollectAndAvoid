@@ -30,6 +30,7 @@ For storing .uasset and .umap the Git LFS is used.
 L_ = Level\
 BP_ = Blueprint\
 M_ = Material\
+MI_ = Material Instance\
 T_ = Texture\
 SM_ = Static Model\
 SK_ = Skeleton Model\
@@ -43,14 +44,15 @@ BTT_ = Behaviour Tree Task
 ## The structure of the folders is the following
 
 Content/CollectAndAvoid  
-From CollectAndAvoid there are folders Blueprints (there is Widgets, Enemy, Behaviour_Tree (Tasks), Blackboard folder as well), Materials, Meshes, Maps, UI, Input_Action, Sounds, Enumeration, Images
+From CollectAndAvoid there are folders Blueprints (there is Widgets, Enemy, Behaviour_Tree (Tasks), Blackboard folder as well), Materials, Meshes, Maps, UI, Input_Action, Sounds, Enumeration, Images, NiagaraSystem
 
 ## Blueprints, their description and their functions
 
 (Added during Part 1)
 BP_Hero. The main character that can move, jump, has camera that follows him. During completion of task, has sprint logic implemented and add input mapping implemented. Also it's class that has pause logic for WBP_Pause widget.\
 BP_Gamemode. The place that controls what Controller class to use (in this case it's BP_ThirdPersonPlayerController, free asset from Unreal Engine), default pawn class (In our case it's BP_Hero). Basically it's where rules are being set\
-Has function to AddScore (that adds score and check whether score is equal to target score and if that's the case, prints string that I won and makes enumeration equal to "Won"). Has variables Score and TargetScore, Game_State_Enumeration.
+Has function to AddScore (that adds score and check whether score is equal to target score and if that's the case, prints string that I won and makes enumeration equal to "Won"). Has variables Score and TargetScore, Game_State_Enumeration.\
+Also has GameUI custom event that shows only the widget with corresponding value (if playing then display WBP_HUD, if won then WBP_Won etc; the value gets transferred from the class that set game state to some value and that used this event to transfer it.)
 
 (Added during Part 2)
 BP_Coin. Has sphere collision component and static mesh. It has only collection logic implemented, where you check whether BP_Hero collided with sphere collision component, then it would add points (by BP_GameMode AddScore function) and destroy the coin.
