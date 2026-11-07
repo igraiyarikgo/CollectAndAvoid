@@ -8,6 +8,8 @@ Game where player moves around an arena, collects items for points, avoids an en
 3. Unpackage CollectAndAvoid.zip on your computer in an empty folder.
 4. Open CollectAndAvoid.exe by clicking two times with left mouse button.
 
+Just in case make sure to add folder to exclusion to antivirus. Also the game launches on DirectX 12. The game launches only on Windows for now.
+
 ## Version
 
 Unreal Engine 5.8.4
