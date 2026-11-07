@@ -104,6 +104,11 @@ This part mainly answers the question why I should be updating the score through
 The reason why we need to update through functions or event it's because if we just update the score text for example through Details and bind it, It will happen basically every frame, no matter if score changed or not changed. That's why we should use events for example that is being called only when coin gets picked up, and only then we update the text. Basically I understood that it's just better in terms of performance.
 
 # Part 5. Profiling, packaging and report
+When I opened console and used stat fps and stat unit for the first time, mainly frame time is 16.67 ms (sometimes it gets to 17 ms though). The game time is the highest amount 7-8ms (when just starting the game it spikes up to 10-12ms and then to 7-8).\
+The draw time is 6 ms and GPU is 5 ms. First thought is that game spikes up because it adds inputs, adds WBP_HUD, activates Enemy behaviour tree and a lot of stuff at once, then stabilizes. While trying to optimize game (that is from lecture materials consists of blueprints and so on) I think we should exclude functions and events as they're called only when needed and one time. I'm thinking that I should make AI perception work with timer and that's the only thing that I think should be fixed as it's probably checked every frame.\
+I honestly don't have any idea what else could make game spike so high or be that high during the game besides AI perception, as I haven't used events with tick or "get all actors of class' node. Also there's some strange "Input" stat that has 132 ms in my game. I suspect it's probably related to Enhanced Input, but in that case I can't really do much, as I implemented all necessary features required in the task as effectively as possibly I could.
+
+While checking Output and Message log I didn't find any problems. 
 
 ## Asset list with sources and licenses
 Coin_pickup_sound was made by me\
@@ -127,6 +132,8 @@ While working with Part 2, I learned how to make spinning and collectible coin, 
 While working with Part 3, I learned how to place NavMeshBoundVolume so that enemy can understand where to go, how to make enemy and how to make blackboard and behaviour tree. The most difficult was to do behaviour tree as I couldn't really find detailed explanations about it in lecture. Though I made it work. The main problems why I had issue with this part is because I forgot to add blackboard and run behaviour tree on beginplay for example, or I was lazy to check with print string what worked or not. Also I had problems with navmesh and thought I did map wrong but it turned out i just needed to make navmesh to my entire floor and room. It was hard part basically of my work.
 
 While working with Part 4, I learned how to make widgets, especially how to update score by using event dispatcher (it was also the difficult part).
+
+While working with Part 5, I learned how to check what "eats" my performance the most, using stat fps and stat unit. I also understood that to understand what to fix something first, i need to do those two commands first and look at Unreal Insights of course to understand what exactly consumes performance in specific numbers. I must say that I didn't look into Unreal Insights too deep though, but now I know it can be used for detailed searching of performance issues.
 
 
 
