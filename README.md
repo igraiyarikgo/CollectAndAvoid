@@ -51,6 +51,11 @@ Has function to AddScore (that adds score and check whether score is equal to ta
 (Added during Part 2)
 BP_Coin. Has sphere collision component and static mesh. It has only collection logic implemented, where you check whether BP_Hero collided with sphere collision component, then it would add points (by BP_GameMode AddScore function) and destroy the coin.
 
+(Added during Part 3)
+BP_Enemy. Checks collision (I added separately sphere collision component named LoseRadius because I had problems with checking overlapping of two characters) with BP_Hero and in that case makes game state to "Lost". Also exposed max walk speed variable to be editable. It's also the blueprint of AI, that has AI Controller class BP_EnemyAIController
+BP_EnemyAIController. Starts blackboard and runs behaviour tree, has implementation of logic when Enemy sees player. Mainly it's blueprint for setting Blackboard values so that Enemy could understand in behaviour tree when to chase player or patrol between 3 points.
+
+
 (Added during doing something from Part 4)
 WBP_HUD. It's what gets shown in the screen, in this case Target Score, Score (that is being updated by binding to event dispatcher of gamemode), Image of coin, Controls hint.\
 WBP_Main_Menu. Widget that shows Main Menu (Play, Settings, Quit). It doesn't work right now, but in case I want to do additional widget, I would make it work.\
@@ -85,6 +90,7 @@ This part mainly answers the question why the cast check is needed.
 From what I understood, the cast check in this case is needed in order for Sphere collision component to understand that it collided with BP_Hero. Also it's needed to access variables and functions of BP_Hero.
 
 # Part 3. Enemy: patrol
+Nothing to answer here. Probably one of the most difficult parts of my work to do after figuring out event dispatcher.
 
 # Part 4. Interface, audio and polish
 This part mainly answers the question why I should be updating the score through functions or event and not per-frame binding. 
@@ -96,21 +102,23 @@ The reason why we need to update through functions or event it's because if we j
 ## Asset list with sources and licenses
 Coin_pickup_sound was made by me\
 Background_loop music was made by me\
-Coin_image was made by me.
+Coin_image was made by me.\
+Enemy_started_chase was made by me.
 
 ## Known bugs
 During part 1 there were no bugs.\
 During part 2 there were no bugs.\
 
 During part 3 I couldn't understand whether it's better to just duplicate BP_ThirdPersonCharacter and make the BP_Enemy this way. Even though it's required to make pawn BP_Enemy, I don't know how to manually insert stuff applicable to the Enemy as character, so I duplicated BP_ThirdPersonCharacter.\
-Also it seems like sometimes AI just stops near obstacles at random moments. I suppose it's probably because sometimes I move fast and it loses where I am, or maybe the problem with obstacles.
+Also I couldn't figure out how to expose sight radius as it's hidden very very deep in ai sight config.
+
 # What I learned and what was hard
 I think I learnt a bit more about git, what folders i should include in .gitignore and actually I'm sort of proud that i made my first ever push commit into github. The hardest part is to have desire to continue even when you already see deadline coming and you have not a lot accomplished. So far, thanks to lecture about Unreal, I made my first Gamemode (it's still confusing to me what is it and their components though), sprint logic and double jump. I understand that maybe I did the base minimum, I tried a lot to understand stuff through documentation, sometime I looked at videos to understand some part of the lecture. So far right now I have finished part 1, and maybe the difficulty was to make obstacles be on the ground, set rules in gamemode, enhanced input is still a bit confusing to me, but changing movement parameters and adding double jump felt fun and easy in part 1.\
 While I was completing task 2, I understood that it's hard for me to understand what enhanced input is. I tried to make the code according to the lecture about adding map input, yet it's hard for me to understand what its purpose, especially when without it, the project seem to work fine.
 
 While working with Part 2, I learned how to make spinning and collectible coin, how to make it add points and disappear when BP_Hero collides with it, also how to make game state enumeration. It was hard for me to understand event dispatcher, probably cast to something. Especially event dispatcher, because I spent I think way too much time understanding how to make it work and how to make it basically.
 
-While working with Part 3, I learned how to place NavMeshBoundVolume so that enemy can understand where to go, how to make enemy and how to make blackboard and behaviour tree.
+While working with Part 3, I learned how to place NavMeshBoundVolume so that enemy can understand where to go, how to make enemy and how to make blackboard and behaviour tree. The most difficult was to do behaviour tree as I couldn't really find detailed explanations about it in lecture. Though I made it work. The main problems why I had issue with this part is because I forgot to add blackboard and run behaviour tree on beginplay for example, or I was lazy to check with print string what worked or not. Also I had problems with navmesh and thought I did map wrong but it turned out i just needed to make navmesh to my entire floor and room. It was hard part basically of my work.
 
 While working with Part 4, I learned how to make widgets, especially how to update score by using event dispatcher (it was also the difficult part).
 
