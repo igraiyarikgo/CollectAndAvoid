@@ -28,17 +28,17 @@ For storing .uasset and .umap the Git LFS is used.
 ## Useful abbreviations in names of objects
 
 L_ = Level\
-BP_ = Blueprint\  
+BP_ = Blueprint\
 M_ = Material\
 T_ = Texture\
 SM_ = Static Model\
 SK_ = Skeleton Model\
 IA_ = Input Action\
-IMC_ = Input Mapping Context\
+IMC_ = Input Mapping Context
 
 BB_ = Blackboard\
 BT_ = Behaviour Tree\
-BTT_ = Behaviour Tree Task\
+BTT_ = Behaviour Tree Task
 
 ## The structure of the folders is the following
 
